@@ -14,7 +14,18 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
-    
+ <style>
+      g[class$='creditgroup'] {
+      display:none !important;
+ }
+
+ g[class^='raphael-group-'][class$='-creditgroup'] {
+  display:none !important;
+}
+svg > g[class^="raphael-group-"] > text{
+    display: none !important;
+}
+ </style>   
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" id="home-section">
   
@@ -54,10 +65,10 @@
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#about-section" class="nav-link">Helplines</a></li>
-                <li><a href="#trainers-section" class="nav-link">Test Centers</a></li>
-                <li><a href="#pricing-section" class="nav-link">Sources</a></li>
-                <li><a href="#blog-section" class="nav-link">About</a></li>
+                <li><a href="#helpline-section" class="nav-link">Helplines</a></li>
+                <li><a href="#testcenter-section" class="nav-link">Test Centers</a></li>
+                <li><a href="#source-section" class="nav-link">Sources</a></li>
+                <li><a href="#about-section" class="nav-link">About</a></li>
                 <!--<li><a href="#services-section" class="nav-link">Home</a></li>
                 <li><a href="#contact-section" class="nav-link">Home</a></li>-->
               </ul>
@@ -122,19 +133,32 @@
 
 
 
-          <div class="col-md-12">
+          <div class="col-md-12 mb-3">
             <h4 class="mt-5">Corona Effect in India</h4>
-            <div id="canvas-holder1" style="width:100%;">
-              <canvas id="chart"></canvas>
+            <div id="linechart-container"></div>
             </div>
+            
+    <div class="col-md-6">
+      <div id="chart-container">&nbsp;</div>
+    </div>
+  
+    <div class="col-md-6">
+      <div id="piechart-container">&nbsp;</div>
+    </div>
+
+    <div class="col-md-12 mb-3">
+      <h4 class="mt-5">Corona Effect in India</h4>
+      <div id="doublechart-container"></div>
+      </div>
           </div>
+
         </div>
 
         
       </div>
     </section> 
 
-    <section class="site-section pb-5" id="about-section">
+    <section class="site-section pb-5" id="helpline-section">
       <div class="container">
         <div class="row justify-content-center" data-aos="fade-up">
           <div class="col-lg-12 text-center heading-section mb-5">
@@ -417,7 +441,7 @@
     </section>
 
 
-    <section class="site-section bg-light trainers" id="trainers-section">
+    <section class="site-section bg-light trainers" id="testcenter-section">
       <div class="container">
         <div class="row">
           <h2 class="text-black mb-5 d-block w-100 text-center">Test Centres across the Country</h2>
@@ -626,7 +650,7 @@
       </div>
     </section>
 
-    <section class="site-section" id="pricing-section">
+    <section class="site-section" id="source-section">
       <div class="container">
         <div class="row justify-content-center" data-aos="fade-up">
           <div class="col-lg-12 text-center heading-section mb-5">
@@ -694,7 +718,7 @@
     </section>
 
 
-    <section class="site-section bg-light" id="blog-section">
+    <section class="site-section bg-light" id="about-section">
       <div class="container">
         <div class="row justify-content-center" data-aos="fade-up">
           <div class="col-lg-12 text-center heading-section mb-5">
@@ -797,9 +821,13 @@
   <script src="js/jquery.sticky.js"></script>
   <script src="js/main.js"></script>
   
-	<script src="js/Chart.min.js"></script>
-	<script src="js/utils.js"></script>
-  <script src="js/line-chart.js"></script>
+<!-- Include fusioncharts core library -->
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+<!-- Include fusion theme -->
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+<script src="https://unpkg.com/jquery-fusioncharts@1.1.0/dist/fusioncharts.jqueryplugin.js"></script>
+<script src="js/chart-script.js"></script>
+
 
   
 </body>
